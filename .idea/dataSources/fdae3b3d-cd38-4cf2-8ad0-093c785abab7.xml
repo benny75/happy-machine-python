@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="postgres@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.54">
     <root id="1"/>
     <database id="2" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
@@ -3783,7 +3783,6 @@
     <schema id="267" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>164409</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -3823,7 +3822,7 @@ DROP TABLE</Tags>
       <FinalExtra>1</FinalExtra>
       <ObjectId>16872</ObjectId>
       <StateNumber>725</StateNumber>
-      <TransitionDasType>internal|0s</TransitionDasType>
+      <TransitionStoredType>internal|0s</TransitionStoredType>
       <CombineId>16866</CombineId>
       <CombineName>first_combinefunc</CombineName>
       <CombineParentName>_timescaledb_internal</CombineParentName>
@@ -3846,7 +3845,7 @@ DROP TABLE</Tags>
       <FinalExtra>1</FinalExtra>
       <ObjectId>16937</ObjectId>
       <StateNumber>725</StateNumber>
-      <TransitionDasType>internal|0s</TransitionDasType>
+      <TransitionStoredType>internal|0s</TransitionStoredType>
       <CombineId>16933</CombineId>
       <CombineName>hist_combinefunc</CombineName>
       <CombineParentName>_timescaledb_internal</CombineParentName>
@@ -3869,7 +3868,7 @@ DROP TABLE</Tags>
       <FinalExtra>1</FinalExtra>
       <ObjectId>16873</ObjectId>
       <StateNumber>725</StateNumber>
-      <TransitionDasType>internal|0s</TransitionDasType>
+      <TransitionStoredType>internal|0s</TransitionStoredType>
       <CombineId>16868</CombineId>
       <CombineName>last_combinefunc</CombineName>
       <CombineParentName>_timescaledb_internal</CombineParentName>
@@ -4739,1618 +4738,1618 @@ DROP TABLE</Tags>
     </table>
     <argument id="367" parent="272">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>anyelement|0s</DasType>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="368" parent="272">
-      <DasType>anyelement|0s</DasType>
       <Position>1</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="369" parent="272">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="370" parent="273">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer[]|0s</DasType>
+      <StoredType>integer[]|0s</StoredType>
     </argument>
     <argument id="371" parent="273">
-      <DasType>double precision|0s</DasType>
       <Position>1</Position>
+      <StoredType>double precision|0s</StoredType>
     </argument>
     <argument id="372" parent="273">
-      <DasType>double precision|0s</DasType>
       <Position>2</Position>
+      <StoredType>double precision|0s</StoredType>
     </argument>
     <argument id="373" parent="273">
-      <DasType>double precision|0s</DasType>
       <Position>3</Position>
+      <StoredType>double precision|0s</StoredType>
     </argument>
     <argument id="374" parent="273">
-      <DasType>integer|0s</DasType>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="375" parent="274">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>anyelement|0s</DasType>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="376" parent="274">
-      <DasType>anyelement|0s</DasType>
       <Position>1</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="377" parent="274">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="378" parent="276">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="379" parent="276" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="380" parent="276" name="compress_after">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="381" parent="276" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="382" parent="276" name="schedule_interval">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>4</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="383" parent="276" name="initial_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>5</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="384" parent="276" name="timezone">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>6</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="385" parent="277">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="386" parent="277" name="continuous_aggregate">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="387" parent="277" name="start_offset">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="388" parent="277" name="end_offset">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>3</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="389" parent="277" name="schedule_interval">
-      <DasType>interval|0s</DasType>
       <Position>4</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="390" parent="277" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="391" parent="277" name="initial_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>6</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="392" parent="277" name="timezone">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>7</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="393" parent="278">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;node_name&quot; name, &quot;host&quot; text, &quot;port&quot; integer, &quot;database&quot; name, &quot;node_created&quot; boolean, &quot;database_created&quot; boolean, &quot;extension_created&quot; boolean)|0v</DasType>
+      <StoredType>table(&quot;node_name&quot; name, &quot;host&quot; text, &quot;port&quot; integer, &quot;database&quot; name, &quot;node_created&quot; boolean, &quot;database_created&quot; boolean, &quot;extension_created&quot; boolean)|0v</StoredType>
     </argument>
     <argument id="394" parent="278" name="node_name">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="395" parent="278" name="host">
-      <DasType>text|0s</DasType>
       <Position>2</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="396" parent="278" name="database">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="397" parent="278" name="port">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="398" parent="278" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="399" parent="278" name="bootstrap">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>6</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="400" parent="278" name="password">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>7</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="401" parent="279">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;dimension_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;column_name&quot; name, &quot;created&quot; boolean)|0v</DasType>
+      <StoredType>table(&quot;dimension_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;column_name&quot; name, &quot;created&quot; boolean)|0v</StoredType>
     </argument>
     <argument id="402" parent="279" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="403" parent="279" name="column_name">
-      <DasType>name|0s</DasType>
       <Position>2</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="404" parent="279" name="number_partitions">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>3</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="405" parent="279" name="chunk_time_interval">
-      <DasType>anyelement|0s</DasType>
       <DefaultExpression>NULL::bigint</DefaultExpression>
       <Position>4</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="406" parent="279" name="partitioning_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>5</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="407" parent="279" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>6</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="408" parent="280">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="409" parent="280" name="proc">
-      <DasType>regproc|0s</DasType>
       <Position>1</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="410" parent="280" name="schedule_interval">
-      <DasType>interval|0s</DasType>
       <Position>2</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="411" parent="280" name="config">
-      <DasType>jsonb|0s</DasType>
       <DefaultExpression>NULL::jsonb</DefaultExpression>
       <Position>3</Position>
+      <StoredType>jsonb|0s</StoredType>
     </argument>
     <argument id="412" parent="280" name="initial_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="413" parent="280" name="scheduled">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="414" parent="280" name="check_config">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>6</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="415" parent="280" name="fixed_schedule">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>7</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="416" parent="280" name="timezone">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>8</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="417" parent="281">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="418" parent="281" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="419" parent="281" name="index_name">
-      <DasType>name|0s</DasType>
       <Position>2</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="420" parent="281" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="421" parent="281" name="initial_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="422" parent="281" name="timezone">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>5</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="423" parent="282">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="424" parent="282" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="425" parent="282" name="drop_after">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="426" parent="282" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="427" parent="282" name="schedule_interval">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>4</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="428" parent="282" name="initial_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>5</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="429" parent="282" name="timezone">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>6</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="430" parent="283">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;node_name&quot; name, &quot;host&quot; text, &quot;port&quot; integer, &quot;database&quot; name, &quot;available&quot; boolean)|0v</DasType>
+      <StoredType>table(&quot;node_name&quot; name, &quot;host&quot; text, &quot;port&quot; integer, &quot;database&quot; name, &quot;available&quot; boolean)|0v</StoredType>
     </argument>
     <argument id="431" parent="283" name="node_name">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="432" parent="283" name="host">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>2</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="433" parent="283" name="database">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="434" parent="283" name="port">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="435" parent="283" name="available">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>NULL::boolean</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="436" parent="284">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;job_id&quot; integer, &quot;schedule_interval&quot; interval, &quot;max_runtime&quot; interval, &quot;max_retries&quot; integer, &quot;retry_period&quot; interval, &quot;scheduled&quot; boolean, &quot;config&quot; jsonb, &quot;next_start&quot; timestamp with time zone, &quot;check_config&quot; text)|0v</DasType>
+      <StoredType>table(&quot;job_id&quot; integer, &quot;schedule_interval&quot; interval, &quot;max_runtime&quot; interval, &quot;max_retries&quot; integer, &quot;retry_period&quot; interval, &quot;scheduled&quot; boolean, &quot;config&quot; jsonb, &quot;next_start&quot; timestamp with time zone, &quot;check_config&quot; text)|0v</StoredType>
     </argument>
     <argument id="437" parent="284" name="job_id">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="438" parent="284" name="schedule_interval">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>2</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="439" parent="284" name="max_runtime">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>3</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="440" parent="284" name="max_retries">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="441" parent="284" name="retry_period">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>5</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="442" parent="284" name="scheduled">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>NULL::boolean</DefaultExpression>
       <Position>6</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="443" parent="284" name="config">
-      <DasType>jsonb|0s</DasType>
       <DefaultExpression>NULL::jsonb</DefaultExpression>
       <Position>7</Position>
+      <StoredType>jsonb|0s</StoredType>
     </argument>
     <argument id="444" parent="284" name="next_start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>8</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="445" parent="284" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>9</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="446" parent="284" name="check_config">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>10</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="447" parent="285">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="448" parent="285" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="449" parent="286">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;hypertable_id&quot; integer, &quot;node_hypertable_id&quot; integer, &quot;node_name&quot; name)|0v</DasType>
+      <StoredType>table(&quot;hypertable_id&quot; integer, &quot;node_hypertable_id&quot; integer, &quot;node_name&quot; name)|0v</StoredType>
     </argument>
     <argument id="450" parent="286" name="node_name">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="451" parent="286" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>2</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="452" parent="286" name="if_not_attached">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="453" parent="286" name="repartition">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>4</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="454" parent="287">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="455" parent="287" name="tablespace">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="456" parent="287" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>2</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="457" parent="287" name="if_not_attached">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="458" parent="288" name="cagg">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="459" parent="288" name="override">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="460" parent="288" name="drop_old">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="461" parent="289">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;chunk_schema&quot; name, &quot;chunk_name&quot; name, &quot;compression_status&quot; text, &quot;before_compression_table_bytes&quot; bigint, &quot;before_compression_index_bytes&quot; bigint, &quot;before_compression_toast_bytes&quot; bigint, &quot;before_compression_total_bytes&quot; bigint, &quot;after_compression_table_bytes&quot; bigint, &quot;after_compression_index_bytes&quot; bigint, &quot;after_compression_toast_bytes&quot; bigint, &quot;after_compression_total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</DasType>
+      <StoredType>table(&quot;chunk_schema&quot; name, &quot;chunk_name&quot; name, &quot;compression_status&quot; text, &quot;before_compression_table_bytes&quot; bigint, &quot;before_compression_index_bytes&quot; bigint, &quot;before_compression_toast_bytes&quot; bigint, &quot;before_compression_total_bytes&quot; bigint, &quot;after_compression_table_bytes&quot; bigint, &quot;after_compression_index_bytes&quot; bigint, &quot;after_compression_toast_bytes&quot; bigint, &quot;after_compression_total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</StoredType>
     </argument>
     <argument id="462" parent="289" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="463" parent="290">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;chunk_schema&quot; name, &quot;chunk_name&quot; name, &quot;table_bytes&quot; bigint, &quot;index_bytes&quot; bigint, &quot;toast_bytes&quot; bigint, &quot;total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</DasType>
+      <StoredType>table(&quot;chunk_schema&quot; name, &quot;chunk_name&quot; name, &quot;table_bytes&quot; bigint, &quot;index_bytes&quot; bigint, &quot;toast_bytes&quot; bigint, &quot;total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</StoredType>
     </argument>
     <argument id="464" parent="290" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="465" parent="291">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>regclass|0s</DasType>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="466" parent="291" name="uncompressed_chunk">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="467" parent="291" name="if_not_compressed">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="468" parent="292">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;hypertable_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;created&quot; boolean)|0v</DasType>
+      <StoredType>table(&quot;hypertable_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;created&quot; boolean)|0v</StoredType>
     </argument>
     <argument id="469" parent="292" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="470" parent="292" name="time_column_name">
-      <DasType>name|0s</DasType>
       <Position>2</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="471" parent="292" name="partitioning_column">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="472" parent="292" name="number_partitions">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="473" parent="292" name="associated_schema_name">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>5</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="474" parent="292" name="associated_table_prefix">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>6</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="475" parent="292" name="chunk_time_interval">
-      <DasType>anyelement|0s</DasType>
       <DefaultExpression>NULL::bigint</DefaultExpression>
       <Position>7</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="476" parent="292" name="create_default_indexes">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>8</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="477" parent="292" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>9</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="478" parent="292" name="partitioning_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>10</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="479" parent="292" name="migrate_data">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>11</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="480" parent="292" name="chunk_target_size">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>12</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="481" parent="292" name="chunk_sizing_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>&apos;_timescaledb_internal.calculate_chunk_interval&apos;::regproc</DefaultExpression>
       <Position>13</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="482" parent="292" name="time_partitioning_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>14</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="483" parent="292" name="replication_factor">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>15</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="484" parent="292" name="data_nodes">
-      <DasType>name[]|0s</DasType>
       <DefaultExpression>NULL::name[]</DefaultExpression>
       <Position>16</Position>
+      <StoredType>name[]|0s</StoredType>
     </argument>
     <argument id="485" parent="293">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;node_name&quot; name, &quot;node_type&quot; text, &quot;restore_point&quot; pg_lsn)|0v</DasType>
+      <StoredType>table(&quot;node_name&quot; name, &quot;node_type&quot; text, &quot;restore_point&quot; pg_lsn)|0v</StoredType>
     </argument>
     <argument id="486" parent="293" name="name">
-      <DasType>text|0s</DasType>
       <Position>1</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="487" parent="294">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;hypertable_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;created&quot; boolean)|0v</DasType>
+      <StoredType>table(&quot;hypertable_id&quot; integer, &quot;schema_name&quot; name, &quot;table_name&quot; name, &quot;created&quot; boolean)|0v</StoredType>
     </argument>
     <argument id="488" parent="294" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="489" parent="294" name="time_column_name">
-      <DasType>name|0s</DasType>
       <Position>2</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="490" parent="294" name="partitioning_column">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="491" parent="294" name="number_partitions">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="492" parent="294" name="associated_schema_name">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>5</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="493" parent="294" name="associated_table_prefix">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>6</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="494" parent="294" name="chunk_time_interval">
-      <DasType>anyelement|0s</DasType>
       <DefaultExpression>NULL::bigint</DefaultExpression>
       <Position>7</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="495" parent="294" name="create_default_indexes">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>8</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="496" parent="294" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>9</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="497" parent="294" name="partitioning_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>10</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="498" parent="294" name="migrate_data">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>11</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="499" parent="294" name="chunk_target_size">
-      <DasType>text|0s</DasType>
       <DefaultExpression>NULL::text</DefaultExpression>
       <Position>12</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="500" parent="294" name="chunk_sizing_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>&apos;_timescaledb_internal.calculate_chunk_interval&apos;::regproc</DefaultExpression>
       <Position>13</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="501" parent="294" name="time_partitioning_func">
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>NULL::regproc</DefaultExpression>
       <Position>14</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="502" parent="294" name="replication_factor">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>15</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="503" parent="294" name="data_nodes">
-      <DasType>name[]|0s</DasType>
       <DefaultExpression>NULL::name[]</DefaultExpression>
       <Position>16</Position>
+      <StoredType>name[]|0s</StoredType>
     </argument>
     <argument id="504" parent="294" name="distributed">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>NULL::boolean</DefaultExpression>
       <Position>17</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="505" parent="295">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>regclass|0s</DasType>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="506" parent="295" name="uncompressed_chunk">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="507" parent="295" name="if_compressed">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="508" parent="296">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>boolean|0s</DasType>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="509" parent="296" name="node_name">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="510" parent="296" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="511" parent="296" name="force">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="512" parent="296" name="repartition">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>4</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="513" parent="296" name="drop_database">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="514" parent="297">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="515" parent="297" name="job_id">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="516" parent="298">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="517" parent="298" name="node_name">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="518" parent="298" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <DefaultExpression>NULL::regclass</DefaultExpression>
       <Position>2</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="519" parent="298" name="if_attached">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="520" parent="298" name="force">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>4</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="521" parent="298" name="repartition">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="522" parent="298" name="drop_remote_data">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>6</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="523" parent="299">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="524" parent="299" name="tablespace">
-      <DasType>name|0s</DasType>
       <Position>1</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="525" parent="299" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <DefaultExpression>NULL::regclass</DefaultExpression>
       <Position>2</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="526" parent="299" name="if_attached">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="527" parent="300">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="528" parent="300" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="529" parent="301" name="query">
-      <DasType>text|0s</DasType>
       <Position>1</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="530" parent="301" name="node_list">
-      <DasType>name[]|0s</DasType>
       <DefaultExpression>NULL::name[]</DefaultExpression>
       <Position>2</Position>
+      <StoredType>name[]|0s</StoredType>
     </argument>
     <argument id="531" parent="301" name="transactional">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>true</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="532" parent="302">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>setof() text|0s</DasType>
+      <StoredType>setof() text|0s</StoredType>
     </argument>
     <argument id="533" parent="302" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="534" parent="302" name="older_than">
-      <DasType>&quot;any&quot;|0s</DasType>
       <DefaultExpression>NULL::unknown</DefaultExpression>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="535" parent="302" name="newer_than">
-      <DasType>&quot;any&quot;|0s</DasType>
       <DefaultExpression>NULL::unknown</DefaultExpression>
       <Position>3</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="536" parent="302" name="verbose">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>4</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="537" parent="303">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>jsonb|0s</DasType>
+      <StoredType>jsonb|0s</StoredType>
     </argument>
     <argument id="538" parent="304">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;total_chunks&quot; bigint, &quot;number_compressed_chunks&quot; bigint, &quot;before_compression_table_bytes&quot; bigint, &quot;before_compression_index_bytes&quot; bigint, &quot;before_compression_toast_bytes&quot; bigint, &quot;before_compression_total_bytes&quot; bigint, &quot;after_compression_table_bytes&quot; bigint, &quot;after_compression_index_bytes&quot; bigint, &quot;after_compression_toast_bytes&quot; bigint, &quot;after_compression_total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</DasType>
+      <StoredType>table(&quot;total_chunks&quot; bigint, &quot;number_compressed_chunks&quot; bigint, &quot;before_compression_table_bytes&quot; bigint, &quot;before_compression_index_bytes&quot; bigint, &quot;before_compression_toast_bytes&quot; bigint, &quot;before_compression_total_bytes&quot; bigint, &quot;after_compression_table_bytes&quot; bigint, &quot;after_compression_index_bytes&quot; bigint, &quot;after_compression_toast_bytes&quot; bigint, &quot;after_compression_total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</StoredType>
     </argument>
     <argument id="539" parent="304" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="540" parent="305">
       <ArgumentDirection>T</ArgumentDirection>
-      <DasType>table(&quot;table_bytes&quot; bigint, &quot;index_bytes&quot; bigint, &quot;toast_bytes&quot; bigint, &quot;total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</DasType>
+      <StoredType>table(&quot;table_bytes&quot; bigint, &quot;index_bytes&quot; bigint, &quot;toast_bytes&quot; bigint, &quot;total_bytes&quot; bigint, &quot;node_name&quot; name)|0v</StoredType>
     </argument>
     <argument id="541" parent="305" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="542" parent="306">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="543" parent="306" name="index_name">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="544" parent="307">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="545" parent="307" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="546" parent="308">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="547" parent="308" name="value">
-      <DasType>bigint|0s</DasType>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="548" parent="308" name="prev">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>2</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="549" parent="308" name="next">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>3</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="550" parent="309">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>double precision|0s</DasType>
+      <StoredType>double precision|0s</StoredType>
     </argument>
     <argument id="551" parent="309" name="value">
-      <DasType>double precision|0s</DasType>
       <Position>1</Position>
+      <StoredType>double precision|0s</StoredType>
     </argument>
     <argument id="552" parent="309" name="prev">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>2</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="553" parent="309" name="next">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>3</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="554" parent="310">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="555" parent="310" name="value">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="556" parent="310" name="prev">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>2</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="557" parent="310" name="next">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>3</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="558" parent="311">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>real|0s</DasType>
+      <StoredType>real|0s</StoredType>
     </argument>
     <argument id="559" parent="311" name="value">
-      <DasType>real|0s</DasType>
       <Position>1</Position>
+      <StoredType>real|0s</StoredType>
     </argument>
     <argument id="560" parent="311" name="prev">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>2</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="561" parent="311" name="next">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>3</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="562" parent="312">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>smallint|0s</DasType>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="563" parent="312" name="value">
-      <DasType>smallint|0s</DasType>
       <Position>1</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="564" parent="312" name="prev">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>2</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="565" parent="312" name="next">
-      <DasType>record|0s</DasType>
       <DefaultExpression>NULL::record</DefaultExpression>
       <Position>3</Position>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="566" parent="313">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>anyelement|0s</DasType>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="567" parent="313" name="value">
-      <DasType>anyelement|0s</DasType>
       <Position>1</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="568" parent="313" name="prev">
-      <DasType>anyelement|0s</DasType>
       <DefaultExpression>NULL::unknown</DefaultExpression>
       <Position>2</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="569" parent="313" name="treat_null_as_missing">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="570" parent="314">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="571" parent="314" name="chunk">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="572" parent="314" name="destination_tablespace">
-      <DasType>name|0s</DasType>
       <Position>2</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="573" parent="314" name="index_destination_tablespace">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="574" parent="314" name="reorder_index">
-      <DasType>regclass|0s</DasType>
       <DefaultExpression>NULL::regclass</DefaultExpression>
       <Position>4</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="575" parent="314" name="verbose">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>5</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="576" parent="315" name="chunk">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="577" parent="315" name="if_not_compressed">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="578" parent="316" name="continuous_aggregate">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="579" parent="316" name="window_start">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="580" parent="316" name="window_end">
-      <DasType>&quot;any&quot;|0s</DasType>
       <Position>3</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="581" parent="317">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>boolean|0s</DasType>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="582" parent="317" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="583" parent="317" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="584" parent="318">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="585" parent="318" name="continuous_aggregate">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="586" parent="318" name="if_not_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="587" parent="318" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>NULL::boolean</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="588" parent="319">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="589" parent="319" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="590" parent="319" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="591" parent="320">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="592" parent="320" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="593" parent="320" name="if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>2</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="594" parent="321">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="595" parent="321" name="chunk">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="596" parent="321" name="index">
-      <DasType>regclass|0s</DasType>
       <DefaultExpression>NULL::regclass</DefaultExpression>
       <Position>2</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="597" parent="321" name="verbose">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="598" parent="322" name="job_id">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="599" parent="323">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>record|0s</DasType>
+      <StoredType>record|0s</StoredType>
     </argument>
     <argument id="600" parent="323" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="601" parent="323" name="chunk_target_size">
-      <DasType>text|0s</DasType>
       <Position>2</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="602" parent="323" name="chunk_sizing_func">
       <ArgumentDirection>M</ArgumentDirection>
-      <DasType>regproc|0s</DasType>
       <DefaultExpression>&apos;_timescaledb_internal.calculate_chunk_interval&apos;::regproc</DefaultExpression>
       <Position>3</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="603" parent="323" name="chunk_target_size">
       <ArgumentDirection>O</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
       <Position>4</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="604" parent="324">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="605" parent="324" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="606" parent="324" name="chunk_time_interval">
-      <DasType>anyelement|0s</DasType>
       <Position>2</Position>
+      <StoredType>anyelement|0s</StoredType>
     </argument>
     <argument id="607" parent="324" name="dimension_name">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="608" parent="325">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="609" parent="325" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="610" parent="325" name="integer_now_func">
-      <DasType>regproc|0s</DasType>
       <Position>2</Position>
+      <StoredType>regproc|0s</StoredType>
     </argument>
     <argument id="611" parent="325" name="replace_if_exists">
-      <DasType>boolean|0s</DasType>
       <DefaultExpression>false</DefaultExpression>
       <Position>3</Position>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="612" parent="326">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="613" parent="326" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="614" parent="326" name="number_partitions">
-      <DasType>integer|0s</DasType>
       <Position>2</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="615" parent="326" name="dimension_name">
-      <DasType>name|0s</DasType>
       <DefaultExpression>NULL::name</DefaultExpression>
       <Position>3</Position>
+      <StoredType>name|0s</StoredType>
     </argument>
     <argument id="616" parent="327">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="617" parent="327" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="618" parent="327" name="replication_factor">
-      <DasType>integer|0s</DasType>
       <Position>2</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="619" parent="328">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>setof() regclass|0s</DasType>
+      <StoredType>setof() regclass|0s</StoredType>
     </argument>
     <argument id="620" parent="328" name="relation">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="621" parent="328" name="older_than">
-      <DasType>&quot;any&quot;|0s</DasType>
       <DefaultExpression>NULL::unknown</DefaultExpression>
       <Position>2</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="622" parent="328" name="newer_than">
-      <DasType>&quot;any&quot;|0s</DasType>
       <DefaultExpression>NULL::unknown</DefaultExpression>
       <Position>3</Position>
+      <StoredType>&quot;any&quot;|0s</StoredType>
     </argument>
     <argument id="623" parent="329">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>setof() name|0s</DasType>
+      <StoredType>setof() name|0s</StoredType>
     </argument>
     <argument id="624" parent="329" name="hypertable">
-      <DasType>regclass|0s</DasType>
       <Position>1</Position>
+      <StoredType>regclass|0s</StoredType>
     </argument>
     <argument id="625" parent="330">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="626" parent="330" name="bucket_width">
-      <DasType>bigint|0s</DasType>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="627" parent="330" name="ts">
-      <DasType>bigint|0s</DasType>
       <Position>2</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="628" parent="331">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="629" parent="331" name="bucket_width">
-      <DasType>bigint|0s</DasType>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="630" parent="331" name="ts">
-      <DasType>bigint|0s</DasType>
       <Position>2</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="631" parent="331" name="offset">
-      <DasType>bigint|0s</DasType>
       <Position>3</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="632" parent="332">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="633" parent="332" name="bucket_width">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="634" parent="332" name="ts">
-      <DasType>integer|0s</DasType>
       <Position>2</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="635" parent="333">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="636" parent="333" name="bucket_width">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="637" parent="333" name="ts">
-      <DasType>integer|0s</DasType>
       <Position>2</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="638" parent="333" name="offset">
-      <DasType>integer|0s</DasType>
       <Position>3</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="639" parent="334">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>date|0s</DasType>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="640" parent="334" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="641" parent="334" name="ts">
-      <DasType>date|0s</DasType>
       <Position>2</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="642" parent="335">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>date|0s</DasType>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="643" parent="335" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="644" parent="335" name="ts">
-      <DasType>date|0s</DasType>
       <Position>2</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="645" parent="335" name="origin">
-      <DasType>date|0s</DasType>
       <Position>3</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="646" parent="336">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>date|0s</DasType>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="647" parent="336" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="648" parent="336" name="ts">
-      <DasType>date|0s</DasType>
       <Position>2</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="649" parent="336" name="offset">
-      <DasType>interval|0s</DasType>
       <Position>3</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="650" parent="337">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="651" parent="337" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="652" parent="337" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="653" parent="338">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="654" parent="338" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="655" parent="338" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="656" parent="338" name="offset">
-      <DasType>interval|0s</DasType>
       <Position>3</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="657" parent="339">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="658" parent="339" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="659" parent="339" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="660" parent="339" name="timezone">
-      <DasType>text|0s</DasType>
       <Position>3</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="661" parent="339" name="origin">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="662" parent="339" name="offset">
-      <DasType>interval|0s</DasType>
       <DefaultExpression>NULL::interval</DefaultExpression>
       <Position>5</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="663" parent="340">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="664" parent="340" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="665" parent="340" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="666" parent="340" name="origin">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>3</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="667" parent="341">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp|0s</DasType>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="668" parent="341" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="669" parent="341" name="ts">
-      <DasType>timestamp|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="670" parent="342">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp|0s</DasType>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="671" parent="342" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="672" parent="342" name="ts">
-      <DasType>timestamp|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="673" parent="342" name="offset">
-      <DasType>interval|0s</DasType>
       <Position>3</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="674" parent="343">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp|0s</DasType>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="675" parent="343" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="676" parent="343" name="ts">
-      <DasType>timestamp|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="677" parent="343" name="origin">
-      <DasType>timestamp|0s</DasType>
       <Position>3</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="678" parent="344">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>smallint|0s</DasType>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="679" parent="344" name="bucket_width">
-      <DasType>smallint|0s</DasType>
       <Position>1</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="680" parent="344" name="ts">
-      <DasType>smallint|0s</DasType>
       <Position>2</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="681" parent="345">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>smallint|0s</DasType>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="682" parent="345" name="bucket_width">
-      <DasType>smallint|0s</DasType>
       <Position>1</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="683" parent="345" name="ts">
-      <DasType>smallint|0s</DasType>
       <Position>2</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="684" parent="345" name="offset">
-      <DasType>smallint|0s</DasType>
       <Position>3</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="685" parent="346">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>bigint|0s</DasType>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="686" parent="346" name="bucket_width">
-      <DasType>bigint|0s</DasType>
       <Position>1</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="687" parent="346" name="ts">
-      <DasType>bigint|0s</DasType>
       <Position>2</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="688" parent="346" name="start">
-      <DasType>bigint|0s</DasType>
       <DefaultExpression>NULL::bigint</DefaultExpression>
       <Position>3</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="689" parent="346" name="finish">
-      <DasType>bigint|0s</DasType>
       <DefaultExpression>NULL::bigint</DefaultExpression>
       <Position>4</Position>
+      <StoredType>bigint|0s</StoredType>
     </argument>
     <argument id="690" parent="347">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>integer|0s</DasType>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="691" parent="347" name="bucket_width">
-      <DasType>integer|0s</DasType>
       <Position>1</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="692" parent="347" name="ts">
-      <DasType>integer|0s</DasType>
       <Position>2</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="693" parent="347" name="start">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>3</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="694" parent="347" name="finish">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>NULL::integer</DefaultExpression>
       <Position>4</Position>
+      <StoredType>integer|0s</StoredType>
     </argument>
     <argument id="695" parent="348">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>date|0s</DasType>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="696" parent="348" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="697" parent="348" name="ts">
-      <DasType>date|0s</DasType>
       <Position>2</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="698" parent="348" name="start">
-      <DasType>date|0s</DasType>
       <DefaultExpression>NULL::date</DefaultExpression>
       <Position>3</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="699" parent="348" name="finish">
-      <DasType>date|0s</DasType>
       <DefaultExpression>NULL::date</DefaultExpression>
       <Position>4</Position>
+      <StoredType>date|0s</StoredType>
     </argument>
     <argument id="700" parent="349">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="701" parent="349" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="702" parent="349" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="703" parent="349" name="timezone">
-      <DasType>text|0s</DasType>
       <Position>3</Position>
+      <StoredType>text|0s</StoredType>
     </argument>
     <argument id="704" parent="349" name="start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="705" parent="349" name="finish">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>5</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="706" parent="350">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp with time zone|0s</DasType>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="707" parent="350" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="708" parent="350" name="ts">
-      <DasType>timestamp with time zone|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="709" parent="350" name="start">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>3</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="710" parent="350" name="finish">
-      <DasType>timestamp with time zone|0s</DasType>
       <DefaultExpression>NULL::timestamp with time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp with time zone|0s</StoredType>
     </argument>
     <argument id="711" parent="351">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>timestamp|0s</DasType>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="712" parent="351" name="bucket_width">
-      <DasType>interval|0s</DasType>
       <Position>1</Position>
+      <StoredType>interval|0s</StoredType>
     </argument>
     <argument id="713" parent="351" name="ts">
-      <DasType>timestamp|0s</DasType>
       <Position>2</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="714" parent="351" name="start">
-      <DasType>timestamp|0s</DasType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
       <Position>3</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="715" parent="351" name="finish">
-      <DasType>timestamp|0s</DasType>
       <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
       <Position>4</Position>
+      <StoredType>timestamp|0s</StoredType>
     </argument>
     <argument id="716" parent="352">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>smallint|0s</DasType>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="717" parent="352" name="bucket_width">
-      <DasType>smallint|0s</DasType>
       <Position>1</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="718" parent="352" name="ts">
-      <DasType>smallint|0s</DasType>
       <Position>2</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="719" parent="352" name="start">
-      <DasType>smallint|0s</DasType>
       <DefaultExpression>NULL::smallint</DefaultExpression>
       <Position>3</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="720" parent="352" name="finish">
-      <DasType>smallint|0s</DasType>
       <DefaultExpression>NULL::smallint</DefaultExpression>
       <Position>4</Position>
+      <StoredType>smallint|0s</StoredType>
     </argument>
     <argument id="721" parent="353">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>fdw_handler|0s</DasType>
+      <StoredType>fdw_handler|0s</StoredType>
     </argument>
     <argument id="722" parent="354">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>void|0s</DasType>
+      <StoredType>void|0s</StoredType>
     </argument>
     <argument id="723" parent="354">
-      <DasType>text[]|0s</DasType>
       <Position>1</Position>
+      <StoredType>text[]|0s</StoredType>
     </argument>
     <argument id="724" parent="354">
-      <DasType>oid|0s</DasType>
       <Position>2</Position>
+      <StoredType>oid|0s</StoredType>
     </argument>
     <argument id="725" parent="355">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>boolean|0s</DasType>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <argument id="726" parent="356">
       <ArgumentDirection>R</ArgumentDirection>
-      <DasType>boolean|0s</DasType>
+      <StoredType>boolean|0s</StoredType>
     </argument>
     <column id="727" parent="357" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103158</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="728" parent="357" name="interval">
-      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103158</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="729" parent="357" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103158</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="730" parent="357" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103158</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="731" parent="357" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103158</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="732" parent="357" name="stick_unique_columns">
@@ -6372,43 +6371,43 @@ end_date</ColNames>
       <UnderlyingIndexId>1290154</UnderlyingIndexId>
     </key>
     <column id="734" parent="358" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103207</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="735" parent="358" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103207</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="736" parent="358" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103207</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="737" parent="358" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103207</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="738" parent="358" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103207</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="739" parent="358" name="stick_partitioned_default_symbol_interval_start_date_end_da_key">
@@ -6445,43 +6444,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290170</UnderlyingIndexId>
     </key>
     <column id="742" parent="359" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103159</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="743" parent="359" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103159</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="744" parent="359" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103159</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="745" parent="359" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103159</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="746" parent="359" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103159</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="747" parent="359" name="stick_partitioned_interval1_symbol_interval_start_date_end__key">
@@ -6518,43 +6517,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290156</UnderlyingIndexId>
     </key>
     <column id="750" parent="360" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103165</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="751" parent="360" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103165</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="752" parent="360" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103165</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="753" parent="360" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103165</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="754" parent="360" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103165</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="755" parent="360" name="stick_partitioned_interval144_symbol_interval_start_date_en_key">
@@ -6591,43 +6590,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290168</UnderlyingIndexId>
     </key>
     <column id="758" parent="361" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103162</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="759" parent="361" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103162</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="760" parent="361" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103162</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="761" parent="361" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103162</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="762" parent="361" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103162</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="763" parent="361" name="stick_partitioned_interval15_symbol_interval_start_date_end_key">
@@ -6664,43 +6663,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290162</UnderlyingIndexId>
     </key>
     <column id="766" parent="362" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103160</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="767" parent="362" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103160</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="768" parent="362" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103160</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="769" parent="362" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103160</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="770" parent="362" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103160</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="771" parent="362" name="stick_partitioned_interval2_symbol_interval_start_date_end__key">
@@ -6737,43 +6736,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290158</UnderlyingIndexId>
     </key>
     <column id="774" parent="363" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103163</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="775" parent="363" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103163</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="776" parent="363" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103163</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="777" parent="363" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103163</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="778" parent="363" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103163</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="779" parent="363" name="stick_partitioned_interval30_symbol_interval_start_date_end_key">
@@ -6810,43 +6809,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290164</UnderlyingIndexId>
     </key>
     <column id="782" parent="364" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103161</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="783" parent="364" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103161</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="784" parent="364" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103161</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="785" parent="364" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103161</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="786" parent="364" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103161</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="787" parent="364" name="stick_partitioned_interval5_symbol_interval_start_date_end__key">
@@ -6883,43 +6882,43 @@ default</CollationNames>
       <UnderlyingIndexId>1290160</UnderlyingIndexId>
     </key>
     <column id="790" parent="365" name="symbol">
-      <DasType>varchar(50)|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>103164</StateNumber>
+      <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="791" parent="365" name="interval">
-      <DasType>integer|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>103164</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="792" parent="365" name="start_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>103164</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="793" parent="365" name="end_date">
-      <DasType>timestamp|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>103164</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="794" parent="365" name="compressed_sticks">
-      <DasType>bytea|0s</DasType>
       <Inherited>1</Inherited>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>103164</StateNumber>
+      <StoredType>bytea|0s</StoredType>
       <TypeId>17</TypeId>
     </column>
     <index id="795" parent="365" name="stick_partitioned_interval60_symbol_interval_start_date_end_key">
@@ -6956,45 +6955,45 @@ default</CollationNames>
       <UnderlyingIndexId>1290166</UnderlyingIndexId>
     </key>
     <column id="798" parent="366" name="datetime">
-      <DasType>timestamp(0)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>timestamp(0)|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
     <column id="799" parent="366" name="interval">
-      <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="800" parent="366" name="init_tick">
-      <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <column id="801" parent="366" name="multiplier">
-      <DasType>integer|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <Position>4</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
     <column id="802" parent="366" name="compressed">
-      <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
     <column id="803" parent="366" name="symbol">
-      <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>752</StateNumber>
+      <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
     <index id="804" parent="366" name="ticks_v2_datetime_idx">

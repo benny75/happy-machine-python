@@ -1,21 +1,12 @@
 import psycopg2
 import psycopg2.extras
+from data.db_config import get_source_db_connection, get_migration_db_connection
 
 # Establish a connection to the source database
-source_conn = psycopg2.connect(
-    dbname="postgres",
-    user="postgres",
-    password="password",
-    host="localhost",
-    port="5432"
-)
+source_conn = get_source_db_connection()
 
 # Establish a connection to the target database
-target_conn = psycopg2.connect(
-    dbname="postgres",
-    host="localhost",
-    port="5436"
-)
+target_conn = get_migration_db_connection()
 
 # Define the fetch size
 fetch_size = 1000

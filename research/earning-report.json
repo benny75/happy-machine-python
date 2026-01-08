@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Bilibili Inc ADR",
+        "symbol": "BILI",
+        "earning date": "2024-11-14",
+        "before/after market": "Before Market",
+        "stock buy price": 24.13,
+        "option strike price": 24.50,
+        "option price": 1.99,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Jd.com Inc ADR",
+        "symbol": "JD",
+        "earning date": "2024-11-14",
+        "before/after market": "Before Market",
+        "stock buy price": 41.23,
+        "option strike price": 42.50,
+        "option price": 1.63,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Zeekr Intelligent Technology Holding ADR",
+        "symbol": "ZK",
+        "earning date": "2024-11-14",
+        "before/after market": "Before Market",
+        "stock buy price": 25.47,
+        "option strike price": 30.00,
+        "option price": 0.75,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Maplebear Inc [Instacart]",
+        "symbol": "CART",
+        "earning date": "2024-11-12",
+        "before/after market": "After Market",
+        "stock buy price": 47.74,
+        "option strike price": 48.00,
+        "option price": 2.05,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Cava Group Inc",
+        "symbol": "CAVA",
+        "earning date": "2024-11-12",
+        "before/after market": "After Market",
+        "stock buy price": 139.00,
+        "option strike price": 150.00,
+        "option price": 4.70,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Corvus Pharma Com",
+        "symbol": "CRVS",
+        "earning date": "2024-11-12",
+        "before/after market": "After Market",
+        "stock buy price": 8.78,
+        "option strike price": 9.00,
+        "option price": 0.75,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Light & Wonder Inc",
+        "symbol": "LNW",
+        "earning date": "2024-11-12",
+        "before/after market": "After Market",
+        "stock buy price": 99.62,
+        "option strike price": 105.00,
+        "option price": 1.35,
+        "option expiry date": "2024-11-15"
+    },
+    {
+        "name": "Stoneco Ltd Cl A",
+        "symbol": "STNE",
+        "earning date": "2024-11-12",
+        "before/after market": "After Market",
+        "stock buy price": 11.51,
+        "option strike price": 12.00,
+        "option price": 0.45,
+        "option expiry date": "2024-11-22"
+    }
+]

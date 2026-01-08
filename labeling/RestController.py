@@ -9,7 +9,6 @@ from data.SticksEnrichment import add_ema
 from data.Symbols import healthy_shares
 from data.TimescaleDBSticksDao import get_sticks
 from labeling.DataStore import DataStore
-from trendy_ai.show_random_trendy import random_trendy
 
 app = Flask(__name__)
 CORS(app)
@@ -96,37 +95,37 @@ def add_label():
         }), 201
 
 
-@app.route('/api/ml/random_trendy', methods=['GET'])
-def get_random_trendy_sticks():
-    try:
-        symbol, interval, sub_sticks = random_trendy()
-        return jsonify(
-        {
-            "symbol": symbol,
-            'interval': interval,
-            "candlesticks": df_to_dict(sub_sticks)
-        })
-    except:
-        return jsonify({"error": "something went wrong."}), 500
+# @app.route('/api/ml/random_trendy', methods=['GET'])
+# def get_random_trendy_sticks():
+#     try:
+#         symbol, interval, sub_sticks = random_trendy()
+#         return jsonify(
+#         {
+#             "symbol": symbol,
+#             'interval': interval,
+#             "candlesticks": df_to_dict(sub_sticks)
+#         })
+#     except:
+#         return jsonify({"error": "something went wrong."}), 500
 
 
-@app.route('/api/ml/predict', methods=['POST'])
-def predict():
-    data = request.get_json(force=True)
-    sticks_json = data['sticks']
-    df = __sticks_to_dataframe(sticks_json)
-
-    if df is None or len(df) < 150:
-        return jsonify({"error": "Invalid data. 'sticks' length must be at least 150."}), 400
-
-    df = add_ema(df)
-    print(f"predicting sticks starting from {df.index[0]}")
-
-    from trendy_ai.predict import predict
-    response = predict(df)
-    print(f"result: {response}")
-
-    return response
+# @app.route('/api/ml/predict', methods=['POST'])
+# def predict():
+#     data = request.get_json(force=True)
+#     sticks_json = data['sticks']
+#     df = __sticks_to_dataframe(sticks_json)
+#
+#     if df is None or len(df) < 150:
+#         return jsonify({"error": "Invalid data. 'sticks' length must be at least 150."}), 400
+#
+#     df = add_ema(df)
+#     print(f"predicting sticks starting from {df.index[0]}")
+#
+#     from trendy_ai.ffnn.predict import predict
+#     response = predict(df)
+#     print(f"result: {response}")
+#
+#     return response
 
 
 def __sticks_to_dataframe(sticks_json):

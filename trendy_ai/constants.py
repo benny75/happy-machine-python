@@ -6,7 +6,7 @@ DATA_SIZE = 30
 
 def model_path():
     current_directory = trendy_ai_dir()
-    return os.path.join(current_directory, 'trendy_model.pth')
+    return os.path.join(current_directory, 'ffnn/trendy_model.pth')
 
 
 def trendy_ai_dir():

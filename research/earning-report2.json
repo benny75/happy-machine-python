@@ -1,0 +1,253 @@
+[
+    {
+        "name": "Colgate-Palmolive Company",
+        "symbol": "CL",
+        "earning date": "2024-10-25",
+        "before/after market": "Before Market",
+        "stock buy price": 100.46,
+        "option strike price": 101.00,
+        "option price": 1.70
+    },
+    {
+        "name": "HCA Holdings Inc",
+        "symbol": "HCA",
+        "earning date": "2024-10-25",
+        "before/after market": "Before Market",
+        "stock buy price": 415.54,
+        "option strike price": 420.00,
+        "option price": 14.60
+    },
+    {
+        "name": "Portland General Electric Company",
+        "symbol": "POR",
+        "earning date": "2024-10-25",
+        "before/after market": "Before Market",
+        "stock buy price": 48.40,
+        "option strike price": 50.00,
+        "option price": 0.35
+    },
+    {
+        "name": "Western Digital Corp",
+        "symbol": "WDC",
+        "earning date": "2024-10-24",
+        "before/after market": "After Market",
+        "stock buy price": 67.03,
+        "option strike price": 68.00,
+        "option price": 2.49
+    },
+    {
+        "name": "Ameren Corp",
+        "symbol": "AEE",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 87.11,
+        "option strike price": 90.00,
+        "option price": 0.65
+    },
+    {
+        "name": "Alamos Gold Inc",
+        "symbol": "AGI",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 20.18,
+        "option strike price": 21.00,
+        "option price": 0.40
+    },
+    {
+        "name": "Dutch Bros Inc Cl A",
+        "symbol": "BROS",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 33.12,
+        "option strike price": 36.00,
+        "option price": 1.20
+    },
+    {
+        "name": "Barrick Gold Corp",
+        "symbol": "GOLD",
+        "earning date": "2024-11-07",
+        "before/after market": "Before Market",
+        "stock buy price": 19.32,
+        "option strike price": 19.50,
+        "option price": 0.47
+    },
+    {
+        "name": "Innovative Industrial Properties",
+        "symbol": "IIPR",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 129.19,
+        "option strike price": 130.00,
+        "option price": 4.10
+    },
+    {
+        "name": "Jackson Financial Inc Cl A",
+        "symbol": "JXN",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 99.95,
+        "option strike price": 105.00,
+        "option price": 3.50
+    },
+    {
+        "name": "Mks Instruments Inc",
+        "symbol": "MKSI",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 99.33,
+        "option strike price": 105.00,
+        "option price": 2.85
+    },
+    {
+        "name": "Nova Ltd",
+        "symbol": "NVMI",
+        "earning date": "2024-11-07",
+        "before/after market": "Before Market",
+        "stock buy price": 185.30,
+        "option strike price": 200.00,
+        "option price": 4.50
+    },
+    {
+        "name": "Oscar Health Inc Cl A",
+        "symbol": "OSCR",
+        "earning date": "2024-11-07",
+        "before/after market": "Before Market",
+        "stock buy price": 16.80,
+        "option strike price": 17.50,
+        "option price": 2.25
+    },
+    {
+        "name": "Royal Gold Inc",
+        "symbol": "RGLD",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 146.06,
+        "option strike price": 150.00,
+        "option price": 2.70
+    },
+    {
+        "name": "Virgin Galactic Holdings Inc",
+        "symbol": "SPCE",
+        "earning date": "2024-11-06",
+        "before/after market": "After Market",
+        "stock buy price": 6.57,
+        "option strike price": 7.50,
+        "option price": 0.33
+    },
+    {
+        "name": "Cummins Inc",
+        "symbol": "CMI",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 331.14,
+        "option strike price": 340.00,
+        "option price": 6.00
+    },
+    {
+        "name": "Cirrus Logic Inc",
+        "symbol": "CRUS",
+        "earning date": "2024-11-04",
+        "before/after market": "After Market",
+        "stock buy price": 121.20,
+        "option strike price": 125.00,
+        "option price": 5.80
+    },
+    {
+        "name": "Eversource Energy",
+        "symbol": "ES",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 64.55,
+        "option strike price": 65.00,
+        "option price": 1.25
+    },
+    {
+        "name": "Illumina Inc",
+        "symbol": "ILMN",
+        "earning date": "2024-11-04",
+        "before/after market": "After Market",
+        "stock buy price": 146.00,
+        "option strike price": 150.00,
+        "option price": 4.40
+    },
+    {
+        "name": "Mplx LP",
+        "symbol": "MPLX",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 44.74,
+        "option strike price": 45.00,
+        "option price": 0.35
+    },
+    {
+        "name": "Realty Income Corp",
+        "symbol": "O",
+        "earning date": "2024-11-04",
+        "before/after market": "After Market",
+        "stock buy price": 60.41,
+        "option strike price": 62.50,
+        "option price": 0.40
+    },
+    {
+        "name": "Restaurant Brands International",
+        "symbol": "QSR",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 70.50,
+        "option strike price": 72.50,
+        "option price": 1.30
+    },
+    {
+        "name": "Ryman Hospitality Properties REIT",
+        "symbol": "RHP",
+        "earning date": "2024-11-04",
+        "before/after market": "After Market",
+        "stock buy price": 109.45,
+        "option strike price": 110.00,
+        "option price": 2.05
+    },
+    {
+        "name": "Targa Resources",
+        "symbol": "TRGP",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 164.41,
+        "option strike price": 165.00,
+        "option price": 4.30
+    },
+    {
+        "name": "USA Compression Partners LP",
+        "symbol": "USAC",
+        "earning date": "2024-11-05",
+        "before/after market": "Before Market",
+        "stock buy price": 22.23,
+        "option strike price": 22.50,
+        "option price": 0.40
+    },
+    {
+        "name": "Vornado Realty Trust",
+        "symbol": "VNO",
+        "earning date": "2024-11-04",
+        "before/after market": "After Market",
+        "stock buy price": 42.79,
+        "option strike price": 45.00,
+        "option price": 1.05
+    },{
+        "name": "Citizens Financial Group Inc",
+        "symbol": "CFG",
+        "earning date": "2024-10-16",
+        "before/after market": "Before Market",
+        "stock buy price": 41.47,
+        "option strike price": 42.50,
+        "option price": 0.70
+    },
+    {
+        "name": "U.S. Bancorp",
+        "symbol": "USB",
+        "earning date": "2024-10-16",
+        "before/after market": "Before Market",
+        "stock buy price": 45.10,
+        "option strike price": 46.00,
+        "option price": 0.85
+    }
+]

@@ -1,0 +1,148 @@
+ticker,name,ig_epic
+NVDA,NVIDIA Corporation,UC.D.NVDA.DAILY.IP
+SPY,SPDR S&P 500 ETF TRUST,AB.D.SPYAU.DAILY.IP
+TSLA,"Tesla, Inc.",ED.D.TL0GY.DAILY.IP
+QQQ,"Invesco QQQ Trust, Series 1",UC.D.QQQ.DAILY.IP
+AAPL,Apple Inc.,UA.D.AAPL.DAILY.IP
+AMD,"Advanced Micro Devices, Inc.",SA.D.AMD.DAILY.IP
+BRK,Berkshire Hathaway Inc.,SA.D.BRKAUS.DAILY.IP
+LULU,lululemon athletica inc.,UB.D.LULU.DAILY.IP
+MSFT,Microsoft Corporation,ED.D.MSFGY.DAILY.IP
+IWM,iShares Russell 2000 ETF,SI.D.IWM.DAILY.IP
+AVGO,Broadcom Inc.,UA.D.AVGO.DAILY.IP
+AMZN,"Amazon.com, Inc.",UA.D.AMZN.DAILY.IP
+SMCI,"Super Micro Computer, Inc.",UD.D.SMCIUS.DAILY.IP
+META,"Meta Platforms, Inc.",UB.D.FB.DAILY.IP
+MU,"Micron Technology, Inc.",UC.D.MU.DAILY.IP
+NKE,"Nike, Inc.",SE.D.NKE.DAILY.IP
+IVV,iShares Core S&P 500 ETF,SI.D.IVV.DAILY.IP
+MSTR,MicroStrategy Incorporated,UC.D.MSTR.DAILY.IP
+GOOG,Alphabet Inc.,UB.D.GOOGL.DAILY.IP
+TQQQ,ProShares UltraPro QQQ,UD.D.TQQQUS.DAILY.IP
+TLT,iShares 20+ Year Treasury Bond ETF,SI.D.TLTUS.DAILY.IP
+VOO,Vanguard S&P 500 ETF,SI.D.VOO.DAILY.IP
+ADBE,Adobe Inc.,UA.D.ADBE.DAILY.IP
+SOXL,Direxion Daily Semiconductor Bull 3x Shares,SI.D.SOXLUS.DAILY.IP
+COIN,"Coinbase Global, Inc.",UA.D.COINUS.DAILY.IP
+"V, ","isa Inc.""",IX.D.SPTRD.DAILY.IP
+FDX,FedEx Corporation,SA.D.AGMUS.DAILY.IP
+LQD,iShares iBoxx $ Investment Grade Corporate Bond ETF,SI.D.LQDUS.DAILY.IP
+HYG,iShares iBoxx $ High Yield Corporate Bond ETF,SI.D.HYG.DAILY.IP
+ACN,Accenture plc,SA.D.ACN.DAILY.IP
+XOM,Exxon Mobil Corporation,SH.D.XOM.DAILY.IP
+JPM,JP Morgan Chase & Co.,SD.D.JPM.DAILY.IP
+PDD,PDD Holdings Inc.,UC.D.PDDUS.DAILY.IP
+LLY,Eli Lilly and Company,ED.D.LLYGR.DAILY.IP
+CMI,Cummins Inc.,SB.D.CUM.DAILY.IP
+BA,Boeing Company (The),SA.D.BA.DAILY.IP
+IBIT,iShares Bitcoin Trust,UB.D.IBITUS.DAILY.IP
+UNH,UnitedHealth Group Incorporated,SH.D.UNH.DAILY.IP
+GLD,SPDR Gold Trust,AG.D.GLDSP.DAILY.IP
+NFLX,"Netflix, Inc.",UC.D.NFLX.DAILY.IP
+XLF,SPDR Select Sector Fund - Financial,SI.D.XLF.DAILY.IP
+COST,Costco Wholesale Corporation,UA.D.COST.DAILY.IP
+DIA,SPDR Dow Jones Industrial Average ETF,SI.D.DI.DAILY.IP
+EEM,iShares MSCI Emerging Index Fund,SI.D.EEMUS.DAILY.IP
+SMH,VanEck Semiconductor ETF,SI.D.CNXTUS.DAILY.IP
+INTC,Intel Corporation,UB.D.INTC.DAILY.IP
+XLK,SPDR Select Sector Fund - Technology,SI.D.XLKUS.DAILY.IP
+CRM,"Salesforce, Inc.",SB.D.CRM.DAILY.IP
+HD,"Home Depot, Inc. (The)",SC.D.HD.DAILY.IP
+JNJ,Johnson & Johnson,SD.D.JNJ.DAILY.IP
+MA,Mastercard Incorporated,SE.D.MAUS.DAILY.IP
+PANW,"Palo Alto Networks, Inc.",SE.D.PANWUS.DAILY.IP
+BAC,Bank of America Corporation,SA.D.BAC.DAILY.IP
+SQQQ,ProShares UltraPro Short QQQ,UD.D.SQQQ.DAILY.IP
+PG,Procter & Gamble Company (The),SE.D.PG.DAILY.IP
+MO,"Altria Group, Inc.",SE.D.MO.DAILY.IP
+EFA,iShares MSCI EAFE ETF,SI.D.IEFAUS.DAILY.IP
+"C, ","Citigroup, Inc.""",SB.D.C.DAILY.IP
+XBI,SPDR Series Trust SPDR S&P Biotech ETF,SI.D.XBIUS.DAILY.IP
+QCOM,QUALCOMM Incorporated,UC.D.QCOM.DAILY.IP
+GE,General Electric Company,SC.D.GE.DAILY.IP
+ARM,Arm Holdings plc,UA.D.ARMUS.DAILY.IP
+CVX,Chevron Corporation,SB.D.CVX.DAILY.IP
+BABA,Alibaba Group Holding Limited,SA.D.BABA.DAILY.IP
+FXI,iShares China Large-Cap ETF,AB.D.IZZAU.DAILY.IP
+GS,"Goldman Sachs Group, Inc. (The)",SC.D.GS.DAILY.IP
+CVS,CVS Health Corporation,KA.D.CVSG.DAILY.IP
+MRK,"Merck & Company, Inc.",KC.D.RMMCLN.DAILY.IP
+WMT,Walmart Inc.,SH.D.WMT.DAILY.IP
+CRWD,"CrowdStrike Holdings, Inc.",UA.D.CRWDUS.DAILY.IP
+ORCL,Oracle Corporation,SE.D.ORCLUS.DAILY.IP
+XLI,SPDR Select Sector Fund - Industrial,SI.D.XLI.DAILY.IP
+XLE,SPDR Select Sector Fund - Energy Select Sector,SI.D.XLE.DAILY.IP
+DIS,Walt Disney Company (The),SB.D.DIS.DAILY.IP
+XLP,SPDR Select Sector Fund - Consumer Staples,SI.D.XLPUS.DAILY.IP
+AGG,iShares Core U.S. Aggregate Bond ETF,SI.D.AGGUS.DAILY.IP
+XLV,SPDR Select Sector Fund - Health Care,SI.D.XLV.DAILY.IP
+AMAT,"Applied Materials, Inc.",UA.D.AMAT.DAILY.IP
+LIN,Linde plc,ED.D.LINGY.DAILY.IP
+PFE,"Pfizer, Inc.",SE.D.PFE.DAILY.IP
+WFC,Wells Fargo & Company,SH.D.WFCPUS.DAILY.IP
+MARA,"Marathon Digital Holdings, Inc.",UC.D.MARAUS.DAILY.IP
+IBM,International Business Machines Corporation,SD.D.IBM.DAILY.IP
+CSCO,"Cisco Systems, Inc.",UA.D.CSCO.DAILY.IP
+BKNG,Booking Holdings Inc. Common Stock,UC.D.PCLN.DAILY.IP
+SNPS,"Synopsys, Inc.",UD.D.SNPS.DAILY.IP
+RDDT,"Reddit, Inc.",SG.D.RDDTUS.DAILY.IP
+CAT,"Caterpillar, Inc.",SB.D.CAT.DAILY.IP
+ANET,"Arista Networks, Inc.",SA.D.ANETUS.DAILY.IP
+ABBV,AbbVie Inc.,SA.D.ABBVWUS.DAILY.IP
+MCD,McDonald's Corporation,SE.D.MCD.DAILY.IP
+TXN,Texas Instruments Incorporated,UD.D.TXN.DAILY.IP
+VZ,Verizon Communications Inc.,SH.D.VZ.DAILY.IP
+UBER,"Uber Technologies, Inc.",SH.D.UBERUS.DAILY.IP
+PEP,"PepsiCo, Inc.",SE.D.PEP.DAILY.IP
+KO,Coca-Cola Company (The),SD.D.KO.DAILY.IP
+IEMG,iShares Core MSCI Emerging Markets ETF,SI.D.IEMGUS.DAILY.IP
+NOW,"ServiceNow, Inc.",SE.D.NOWUS.DAILY.IP
+MRVL,"Marvell Technology, Inc.",UC.D.MRVL.DAILY.IP
+LRCX,Lam Research Corporation,UB.D.LRCX.DAILY.IP
+XLU,SPDR Select Sector Fund - Utilities,SI.D.XLU.DAILY.IP
+GBTC,Grayscale Bitcoin Trust (BTC),SI.D.GBTCUS.DAILY.IP
+PYPL,"PayPal Holdings, Inc.",UC.D.PYPLVUS.DAILY.IP
+FCX,"Freeport-McMoRan, Inc.",SC.D.FCX.DAILY.IP
+RTX,RTX Corporation,SH.D.UTX.DAILY.IP
+SNOW,Snowflake Inc.,SG.D.SNOWUS.DAILY.IP
+ETN,"Eaton Corporation, PLC",SB.D.ETN.DAILY.IP
+CMG,"Chipotle Mexican Grill, Inc.",SB.D.CMGUS.DAILY.IP
+LOW,"Lowe's Companies, Inc.",SD.D.LOW.DAILY.IP
+CMCSA,Comcast Corporation,UA.D.CMCSA.DAILY.IP
+GDX,VanEck Gold Miners ETF,KA.D.GDGBLN.DAILY.IP
+VTI,Vanguard Total Stock Market ETF,AB.D.VTSAU.DAILY.IP
+AMGN,Amgen Inc.,UA.D.AMGN.DAILY.IP
+IEFA,iShares Core MSCI EAFE ETF,SI.D.IEFAUS.DAILY.IP
+BIDU,"Baidu, Inc.",UA.D.BIDU.DAILY.IP
+CLSK,"CleanSpark, Inc.",UA.D.CLSKUS.DAILY.IP
+NEE,"NextEra Energy, Inc.",SE.D.NEPUS.DEC.IP
+SPGI,S&P Global Inc.,SE.D.MHP.DAILY.IP
+TMO,Thermo Fisher Scientific Inc,SG.D.TMO.DAILY.IP
+ISRG,"Intuitive Surgical, Inc.",UB.D.ISRG.DAILY.IP
+UPS,"United Parcel Service, Inc.",SH.D.UPS.DAILY.IP
+PLTR,Palantir Technologies Inc.,SE.D.PLTRUS.DAILY.IP
+COP,ConocoPhillips,SB.D.COP.DAILY.IP
+BMY,Bristol-Myers Squibb Company,SA.D.BMYRUS.DAILY.IP
+DE,Deere & Company,SB.D.DE.DAILY.IP
+SOXX,iShares Semiconductor ETF,UD.D.SOXXUS.DAILY.IP
+ABT,Abbott Laboratories,SA.D.ABT.DAILY.IP
+VLO,Valero Energy Corporation,SH.D.VLO.DAILY.IP
+SBUX,Starbucks Corporation,UD.D.SBUX.DAILY.IP
+DHR,Danaher Corporation,SB.D.DHR.DAILY.IP
+IEF,iShares 7-10 Year Treasury Bond ETF,SI.D.IEFUS.DAILY.IP
+TMUS,"T-Mobile US, Inc.",SE.D.PCSUS.DAILY.IP
+CDNS,"Cadence Design Systems, Inc.",UA.D.CDN.DAILY.IP
+GILD,"Gilead Sciences, Inc.",UB.D.GILD.DAILY.IP
+EMB,iShares J.P. Morgan USD Emerging Markets Bond ETF,AB.D.IHEBAU.DAILY.IP
+PM,Philip Morris International Inc,SE.D.PMUS.DAILY.IP
+GEHC,GE HealthCare Technologies Inc.,UB.D.GEHCVUS.DAILY.IP
+ULTA,"Ulta Beauty, Inc.",UD.D.ULTAUS.DAILY.IP
+BDX,"Becton, Dickinson and Company",SA.D.BDX.DAILY.IP
+NXPI,NXP Semiconductors N.V.,UC.D.NXPI.DAILY.IP
+MS,Morgan Stanley,SE.D.MSUS.DAILY.IP
+INTU,Intuit Inc.,UB.D.INTU.DAILY.IP
+RSP,Invesco S&P 500 Equal Weight ETF,SI.D.RYTUS.DAILY.IP
+KRE,SPDR S&P Regional Banking ETF,SI.D.KREUS.DAILY.IP
+DELL,Dell Technologies Inc.,SB.D.DELLUS.DAILY.IP
+PGR,Progressive Corporation (The),SE.D.PGR.DAILY.IP
+SOUN,"SoundHound AI, Inc.",UD.D.SOUNUS.DAILY.IP

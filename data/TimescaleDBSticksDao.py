@@ -5,29 +5,28 @@ import msgpack
 import pandas as pd
 import pytz
 
+from data.db_config import get_db_connection, get_migration_db_connection
 
-def get_sticks(symbol, interval, from_time: datetime = datetime.min, to_time: datetime = datetime.max):
-    connection = psycopg2.connect(
-        host="localhost",
-        port='5436',
-        database="postgres",
-        user="postgres",
-        password="password"
-    )
+def get_sticks(symbol, interval, from_time: datetime = datetime.min, to_time: datetime = datetime.max, limit: int = None):
+    connection = get_db_connection()
 
     with connection.cursor(cursor_factory=RealDictCursor) as cursor:
         if from_time != datetime.min and to_time != datetime.max:
             query = """
             SELECT compressed_sticks FROM stick WHERE symbol = %s AND interval = %s AND
             start_date <= %s AND end_date >= %s
-            ORDER BY start_date
+            ORDER BY start_date DESC
             """
+            if limit:
+                query += f" LIMIT {limit}"
             cursor.execute(query, (symbol, interval, to_time, from_time))
         else:
             query = """
             SELECT compressed_sticks FROM stick WHERE symbol = %s AND interval = %s
-            ORDER BY start_date
+            ORDER BY start_date DESC
             """
+            if limit:
+                query += f" LIMIT {limit}"
             cursor.execute(query, (symbol, interval))
 
         rows = cursor.fetchall()
@@ -67,13 +66,7 @@ def get_sticks(symbol, interval, from_time: datetime = datetime.min, to_time: da
 
 
 def get_all_symbols():
-    connection = psycopg2.connect(
-        host="localhost",
-        port='5436',
-        database="postgres",
-        user="postgres",
-        password="password"
-    )
+    connection = get_migration_db_connection()
 
     with connection.cursor(cursor_factory=RealDictCursor) as cursor:
         query = """
