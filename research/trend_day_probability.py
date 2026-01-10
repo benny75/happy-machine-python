@@ -21,7 +21,6 @@ def analyze_trend_days():
 
     # Prepare Data
     df.index = pd.to_datetime(df.index)
-    df = df.sort_index()
     df = df.tz_convert('US/Eastern')
     df['price'] = (df['bid_close'] + df['ask_close']) / 2
     df['date'] = df.index.date

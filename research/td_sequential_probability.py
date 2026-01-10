@@ -120,7 +120,6 @@ def analyze_symbol(symbol: str, days_back: int = 365*3) -> dict:
         if df.empty:
             return stats
 
-        df = df.sort_index()
         df = calculate_td_sequential(df)
 
         if 'td_buy_setup' not in df.columns:

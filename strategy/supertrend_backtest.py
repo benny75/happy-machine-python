@@ -144,7 +144,6 @@ class SupertrendBacktest:
             if df.empty or 'ask_high' not in df.columns or 'volume' not in df.columns:
                 return []
                 
-            df = df.sort_index()
             if len(df) < warmup_days:
                 return []
             

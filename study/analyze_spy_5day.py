@@ -15,7 +15,6 @@ def analyze_spy_5day():
 
     # Retrieve candlestick data
     df = get_sticks(symbol, interval)
-    df.sort_index(inplace=True)  # ensure data is sorted by date
 
     # For simplicity, use ask_close as the closing price.
     # You might choose to use bid_close or an average of both.

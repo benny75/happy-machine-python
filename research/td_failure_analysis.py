@@ -69,7 +69,6 @@ def analyze_failures():
             if df.empty or len(df) < 50:
                 continue
                 
-            df = df.sort_index()
             # Calculate close (mid)
             df['close'] = (df['bid_close'] + df['ask_close']) / 2
             df['high'] = (df['bid_high'] + df['ask_high']) / 2

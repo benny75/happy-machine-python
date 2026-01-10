@@ -11,7 +11,6 @@ def analyze_monday_open_close():
 
     # Retrieve candlestick data
     df = get_sticks(symbol, interval)
-    df.sort_index(inplace=True)
 
     # Use ask_open and ask_close as the daily open and close prices.
     # Adjust if you'd like to use bid prices or an average.

@@ -40,7 +40,6 @@ def get_stick_metrics(symbol):
         if df.empty:
             return None
             
-        df = df.sort_index()
         last_stick = df.iloc[-1]
         
         close_price = (last_stick['bid_close'] + last_stick['ask_close']) / 2

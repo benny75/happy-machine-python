@@ -22,7 +22,6 @@ def run_backtest():
 
     # Ensure index is datetime and localized to UTC, then convert to US/Eastern
     df.index = pd.to_datetime(df.index)
-    df = df.sort_index()
     df = df.tz_convert('US/Eastern')
     
     # Calculate mid price

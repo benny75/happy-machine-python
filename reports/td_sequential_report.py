@@ -123,9 +123,6 @@ def find_td_signals(symbol: str) -> List[Dict]:
         if df.empty:
             return signals
 
-        # Sort by date
-        df = df.sort_index()
-
         # Calculate TD Sequential
         df = calculate_td_sequential(df)
 

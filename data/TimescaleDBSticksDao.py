@@ -52,7 +52,7 @@ def get_sticks(symbol, interval, from_time: datetime = datetime.min, to_time: da
         for stick in flat_sticks_list
     ]
 
-    sticks_df = pd.DataFrame(stick_dicts).set_index("stick_datetime")
+    sticks_df = pd.DataFrame(stick_dicts).set_index("stick_datetime").sort_index()
 
     if from_time is not None and to_time is not None:
         from_time_tzaware = from_time.replace(tzinfo=pytz.UTC)

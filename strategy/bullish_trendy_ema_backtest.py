@@ -106,9 +106,6 @@ class BullishTrendyEMABacktest:
                     'error': 'No data available for the specified date range'
                 }
             
-            # Sort by date to ensure chronological order
-            sticks_df = sticks_df.sort_index()
-            
             # Entry: Buy at ask price on the first available day (should be 2025-06-13 or close to it)
             entry_row = sticks_df.iloc[0]
             entry_price = entry_row['ask_close']  # Use ask_close for entry
