@@ -71,6 +71,32 @@ class IBTools:
             logger.error(f"Error checking VIX term structure: {e}")
             return 'error'
 
+    def get_current_price(self, symbol="SPX"):
+        """
+        Gets the current market price for a symbol.
+        """
+        try:
+            self.connect()
+            if symbol == 'SPX' or symbol == 'VIX':
+                contract = Index(symbol, 'CBOE')
+            else:
+                contract = Stock(symbol, 'SMART', 'USD')
+            
+            self.ib.qualifyContracts(contract)
+            ticker = self.ib.reqMktData(contract, '', False, False)
+            self.ib.sleep(2)
+            
+            price = ticker.last
+            if math.isnan(price) or price <= 0:
+                 price = ticker.marketPrice()
+            if math.isnan(price) or price <= 0:
+                 price = ticker.close
+                 
+            return price
+        except Exception as e:
+            logger.error(f"Error getting price for {symbol}: {e}")
+            return 0.0
+
     def get_historical_iv_rank(self, symbol="SPX"):
         """
         Fetches 1 year of historical implied volatility from IBKR and calculates Rank.

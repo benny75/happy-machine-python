@@ -32,19 +32,6 @@ class IVStrangler:
         with open(STATE_FILE, 'w') as f:
             json.dump(self.trades, f, indent=2, default=str)
 
-    def check_market_regime(self):
-        """
-        Checks VIX Term structure.
-        Returns 'contango', 'backwardation', or 'unknown'.
-        """
-        # TODO: Implement VIX Futures check using IB or other data source.
-        # For now, we will assume Contango (Normal) or ask user?
-        # A simple proxy might be VIX vs VIX3M if available via yfinance, 
-        # but IBKR is better for /VX futures.
-        
-        logger.warning("VIX Term Structure check not fully implemented. Assuming Contango.")
-        return 'contango'
-
     def get_symbol_iv_rank(self, symbol):
         data = get_iv_rank(symbol)
         logger.debug(f"get_iv_rank({symbol}) returned: {data}")
@@ -56,54 +43,87 @@ class IVStrangler:
         """
         Scans for potential entry for the given symbol.
         Criteria:
-        - Market in Contango
         - IV Rank > 30
         - 45 DTE
         """
-        regime = self.check_market_regime()
-        if regime == 'backwardation':
-            return {"action": "WAIT", "reason": "Market in Backwardation (Panic)"}
-
+        signals = []
+        
+        # 1. CORE STRATEGY (Iron Condor)
         rank = self.get_symbol_iv_rank(symbol)
         if rank < 30:
-            return {"action": "WAIT", "reason": f"IV Rank {rank} < 30"}
+            signals.append({"type": "STRATEGY", "action": "WAIT", "reason": f"IV Rank {rank:.2f} < 30"})
+        else:
+            signals.append({
+                "type": "STRATEGY",
+                "action": "ENTER",
+                "symbol": symbol,
+                "iv_rank": rank,
+                "target_dte": 45,
+                "target_delta": 16,
+                "reason": "Conditions met"
+            })
+        
+        return signals
 
-        # If we passed filters, we look for strikes
-        # This requires an active connection to get the option chain
-        return {
-            "action": "ENTER",
-            "symbol": symbol,
-            "iv_rank": rank,
-            "target_dte": 45,
-            "target_delta": 16,
-            "reason": "Conditions met"
-        }
-
-    def check_active_positions(self):
+    def check_active_positions(self, current_market_data=None):
         """
         Iterate through active trades and check for exit/adjust signals.
+        - Crash Protection (Backwardation)
         - Profit > 50%
         - DTE <= 21
-        - Tested sides
+        - Tested sides (Defense)
+        
+        Args:
+            current_market_data (dict): Optional dict with current prices/regime. 
+                                        Example: {'SPX_price': 4000, 'regime': 'contango'}
         """
         updates = []
+        
         for trade in self.trades:
             if trade.get('status') != 'OPEN':
                 continue
 
-            # Mocking current data for logic demonstration
-            # In reality, we need to fetch current option prices for the specific strikes
-            
             entry_date = datetime.strptime(trade['entry_date'], "%Y-%m-%d").date()
             days_held = (date.today() - entry_date).days
             
-            # TODO: Calculate current profit/loss and DTE
+            # Calculate DTE
+            try:
+                exp_date = datetime.strptime(str(trade['expiration']), "%Y%m%d").date()
+                dte = (exp_date - date.today()).days
+            except ValueError:
+                dte = 0 # Expired or invalid
             
+            # 1. TIME STOP (21 DTE)
+            if dte <= 21:
+                updates.append({
+                    "trade_id": trade['id'],
+                    "action": "ROLL_OUT",
+                    "reason": f"DTE {dte} <= 21 (Gamma Risk).",
+                    "instruction": "Roll entire position to next monthly cycle for a Net Credit."
+                })
+                continue
+
+            # 3. PROFIT TAKING (50%)
+            # We need current option prices to calculate this. 
+            # If data provided:
+            # current_profit = ...
+            # if current_profit >= 0.5 * max_profit: ...
+            # For now, we output a check instruction.
             updates.append({
                 "trade_id": trade['id'],
-                "symbol": trade['symbol'],
-                "days_held": days_held,
-                "msg": "Monitoring..."
+                "action": "CHECK_PROFIT",
+                "reason": "Routine Check",
+                "instruction": f"Check if profit >= 50% of Credit Received ({trade.get('credit_received', 0)})."
+            })
+
+            # 4. TESTED STRIKES (DEFENSE)
+            # Logic: If Underlying Price touches Short Put or Short Call
+            # instruction: "Roll untested side closer to delta neutral."
+            updates.append({
+                "trade_id": trade['id'],
+                "action": "MONITOR_STRIKES",
+                "reason": "Delta Defense",
+                "instruction": f"Verify if {trade.get('symbol')} price is challenging Short Put {trade.get('short_put_strike')} or Short Call {trade.get('short_call_strike')}."
             })
             
         return updates

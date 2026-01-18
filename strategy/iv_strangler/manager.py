@@ -33,33 +33,17 @@ def main():
     strategy = IVStrangler()
     ib = IBTools()
     
-    # 1. Market Analysis
-    logger.info("[1] Analyzing Market Regime...")
-    try:
-        regime = ib.get_vix_term_structure()
-        logger.info(f"    VIX Term Structure: {regime.upper()}")
-        
-        if regime == 'error':
-            logger.warning("    ! Could not fetch VIX futures. Proceeding with caution (assuming Contango for manual override).")
-            regime = 'contango'
-            
-    except Exception as e:
-        logger.error(f"    ! Error connecting to IB: {e}")
-        regime = 'unknown'
-
-    # 2. Entry Scan
+    # 1. Entry Scan
     if args.auto_scan or input("\nScan for new entries? (y/n): ").lower() == 'y':
-        logger.info("[2] Scanning for Entries (MES)...")
+        logger.info("[1] Scanning for Entries (MES)...")
         
         # IV Rank Check (Using SPX as proxy for broad market volatility)
         logger.info("    Fetching SPX IV Rank from IBKR (Real-time)...")
         iv_rank = ib.get_historical_iv_rank("SPX")
-        
         logger.info(f"    SPX IV Rank: {iv_rank:.2f}")
-        
-        if regime == 'backwardation':
-            logger.info("    [STOP] Market in Backwardation. No new entries.")
-        elif iv_rank < 30:
+
+        # Check Core Strategy
+        if iv_rank < 30:
             logger.info(f"    [WAIT] IV Rank {iv_rank:.2f} < 30. No new entries.")
         else:
             logger.info("    [GO] Conditions met! Searching for Iron Condor strikes on MES...")
@@ -120,16 +104,21 @@ def main():
             else:
                 logger.warning("    ! Could not find suitable strikes.")
 
-    # 3. Monitor Active
+    # 2. Monitor Active
     if args.monitor or input("\nMonitor active positions? (y/n): ").lower() == 'y':
-        logger.info("[3] Monitoring Active Positions...")
+        logger.info("[2] Monitoring Active Positions...")
         updates = strategy.check_active_positions()
         
         if not updates:
             logger.info("    No active positions.")
         else:
             for u in updates:
-                logger.info(f"    Trade #{u['trade_id']} ({u['symbol']}): Held {u['days_held']} days. {u['msg']}")
+                if 'action' in u:
+                    logger.info(f"    [Trade #{u['trade_id']}] ACTION: {u['action']}")
+                    logger.info(f"      Reason: {u['reason']}")
+                    logger.info(f"      Instruction: {u['instruction']}")
+                else:
+                    logger.info(f"    Trade #{u['trade_id']}: {u}")
                 
     ib.disconnect()
     logger.info("Done.")
