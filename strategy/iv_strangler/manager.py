@@ -49,11 +49,11 @@ def main():
 
     # 2. Entry Scan
     if args.auto_scan or input("\nScan for new entries? (y/n): ").lower() == 'y':
-        logger.info("[2] Scanning for Entries (SPX)...")
+        logger.info("[2] Scanning for Entries (MES)...")
         
-        # IV Rank Check
-        iv_rank_data = strategy.get_symbol_iv_rank("SPX")
-        iv_rank = iv_rank_data
+        # IV Rank Check (Using SPX as proxy for broad market volatility)
+        logger.info("    Fetching SPX IV Rank from IBKR (Real-time)...")
+        iv_rank = ib.get_historical_iv_rank("SPX")
         
         logger.info(f"    SPX IV Rank: {iv_rank:.2f}")
         
@@ -62,39 +62,56 @@ def main():
         elif iv_rank < 30:
             logger.info(f"    [WAIT] IV Rank {iv_rank:.2f} < 30. No new entries.")
         else:
-            logger.info("    [GO] Conditions met! Searching for strikes...")
-            # Find strikes
-            strikes = ib.find_strangle_strikes("SPX", target_dte=45, target_delta=0.16)
+            logger.info("    [GO] Conditions met! Searching for Iron Condor strikes on MES...")
+            # Find strikes for MES Iron Condor
+            strikes = ib.find_iron_condor_strikes("MES", target_dte=45, short_delta=0.16, long_delta=0.06)
             
             if strikes:
-                logger.info("    >>> RECOMMENDATION <<<")
+                logger.info("    >>> RECOMMENDATION (IRON CONDOR) <<<")
                 logger.info(f"    Expiration: {strikes['expiration']}")
                 logger.info(f"    Underlying: {strikes['underlying_price']}")
                 
-                if strikes['put']:
-                    p_k, p_d, p_b, p_a = strikes['put']
-                    logger.info(f"    SELL PUT:  Strike {p_k} (Delta {p_d:.2f}) | Bid/Ask: {p_b}/{p_a}")
+                # Puts
+                if strikes['short_put']:
+                    k, d, b, a = strikes['short_put']
+                    logger.info(f"    SELL PUT:  Strike {k} (Delta {d:.2f}) | Bid/Ask: {b}/{a}")
                 else:
                     logger.info("    SELL PUT:  Not found")
+
+                if strikes['long_put']:
+                    k, d, b, a = strikes['long_put']
+                    logger.info(f"    BUY PUT:   Strike {k} (Delta {d:.2f}) | Bid/Ask: {b}/{a}")
+                else:
+                    logger.info("    BUY PUT:   Not found")
                     
-                if strikes['call']:
-                    c_k, c_d, c_b, c_a = strikes['call']
-                    logger.info(f"    SELL CALL: Strike {c_k} (Delta {c_d:.2f}) | Bid/Ask: {c_b}/{c_a}")
+                # Calls
+                if strikes['short_call']:
+                    k, d, b, a = strikes['short_call']
+                    logger.info(f"    SELL CALL: Strike {k} (Delta {d:.2f}) | Bid/Ask: {b}/{a}")
                 else:
                     logger.info("    SELL CALL: Not found")
+
+                if strikes['long_call']:
+                    k, d, b, a = strikes['long_call']
+                    logger.info(f"    BUY CALL:  Strike {k} (Delta {d:.2f}) | Bid/Ask: {b}/{a}")
+                else:
+                    logger.info("    BUY CALL:  Not found")
                 
-                # Interactive part remains input() as it requires user action, but we log the decision
                 if input("\n    Record this trade? (y/n): ").lower() == 'y':
                     try:
                         credit = float(input("    Enter total credit received: "))
                         trade = {
-                            "symbol": "SPX",
+                            "symbol": "MES",
+                            "type": "IRON_CONDOR",
                             "expiration": strikes['expiration'],
-                            "put_strike": strikes['put'][0] if strikes['put'] else 0,
-                            "call_strike": strikes['call'][0] if strikes['call'] else 0,
+                            "short_put_strike": strikes['short_put'][0] if strikes['short_put'] else 0,
+                            "long_put_strike": strikes['long_put'][0] if strikes['long_put'] else 0,
+                            "short_call_strike": strikes['short_call'][0] if strikes['short_call'] else 0,
+                            "long_call_strike": strikes['long_call'][0] if strikes['long_call'] else 0,
                             "entry_price": strikes['underlying_price'],
                             "entry_iv_rank": iv_rank,
-                            "credit_received": credit
+                            "credit_received": credit,
+                            "units": 1 
                         }
                         strategy.add_trade(trade)
                         logger.info(f"Trade recorded: {trade}")

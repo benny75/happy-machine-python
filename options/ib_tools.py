@@ -2,6 +2,7 @@ from ib_insync import *
 from datetime import datetime, date, timedelta
 import math
 import logging
+import pandas as pd
 
 logger = logging.getLogger("IVStranglerManager")
 
@@ -30,17 +31,7 @@ class IBTools:
         """
         try:
             self.connect()
-            # Request all VIX futures
-            # Note: We need to be careful to get the correct active months.
-            # A simple way is to search for 'VIX' futures on CFE.
-            
-            # Use a broad search or hardcode logic for "next 2 months"
-            # Getting specific contracts is faster than searching all.
-            
             today = date.today()
-            # Logic to guess contract months: current month, next month
-            # Format: YYYYMM
-            
             # Simple heuristic: Construct contract months for the next 3 months
             months = []
             for i in range(3):
@@ -52,21 +43,18 @@ class IBTools:
                 contract = Future('VIX', m, 'CFE')
                 details = self.ib.reqContractDetails(contract)
                 if details:
-                    # Filter for standard monthly (not weekly) if needed?
-                    # VIX Futures are usually standard monthly.
                     futures.append(details[0].contract)
             
             if len(futures) < 2:
                 return 'error'
                 
-            # Request market data
             tickers = [self.ib.reqMktData(f, '', False, False) for f in futures[:2]]
-            self.ib.sleep(2) # Wait for data
+            self.ib.sleep(2) 
             
             prices = []
             for t in tickers:
                 price = t.last if not math.isnan(t.last) else (t.bid + t.ask)/2
-                if math.isnan(price): price = t.close # Fallback
+                if math.isnan(price): price = t.close 
                 prices.append(price)
             
             logger.debug(f"VIX Futures Prices: {prices}")
@@ -83,145 +71,233 @@ class IBTools:
             logger.error(f"Error checking VIX term structure: {e}")
             return 'error'
 
-    def find_strangle_strikes(self, symbol="SPX", target_dte=45, target_delta=0.16):
+    def get_historical_iv_rank(self, symbol="SPX"):
         """
-        Finds strikes for a Short Strangle.
-        Returns: {
-            "expiration": str,
-            "put_strike": float,
-            "call_strike": float,
-            "put_delta": float,
-            "call_delta": float
-        }
+        Fetches 1 year of historical implied volatility from IBKR and calculates Rank.
         """
         try:
             self.connect()
-            underlying = Index(symbol, 'CBOE') if symbol in ['SPX', 'NDX', 'VIX'] else Stock(symbol, 'SMART', 'USD')
-            self.ib.qualifyContracts(underlying)
+            if symbol == 'SPX':
+                contract = Index('SPX', 'CBOE')
+            else:
+                # Fallback for stocks
+                contract = Stock(symbol, 'SMART', 'USD')
+            
+            self.ib.qualifyContracts(contract)
+            
+            bars = self.ib.reqHistoricalData(
+                contract, 
+                endDateTime='', 
+                durationStr='1 Y', 
+                barSizeSetting='1 day', 
+                whatToShow='OPTION_IMPLIED_VOLATILITY', 
+                useRTH=True
+            )
+            
+            if not bars:
+                logger.warning(f"No historical IV data for {symbol}")
+                return 0.0
+                
+            df = util.df(bars)
+            low = df['close'].min()
+            high = df['close'].max()
+            current = df['close'].iloc[-1]
+            
+            if high == low:
+                return 0.0
+                
+            rank = (current - low) / (high - low) * 100
+            logger.info(f"{symbol} IV Rank (Real-time IB): {rank:.2f} (Low: {low:.2f}, High: {high:.2f}, Current: {current:.2f})")
+            return rank
+
+        except Exception as e:
+            logger.error(f"Error getting historical IV rank: {e}")
+            return 0.0
+
+    def find_iron_condor_strikes(self, symbol="SPX", target_dte=45, short_delta=0.16, long_delta=0.06):
+        """
+        Finds strikes for an Iron Condor.
+        Short legs at `short_delta` (default 0.16).
+        Long legs at `long_delta` (default 0.06).
+        """
+        try:
+            self.connect()
+            
+            underlying_contract = None
+            is_future = False
+            
+            if symbol == 'MES':
+                is_future = True
+                # Find active MES Future
+                pattern = Future('MES', '', 'CME')
+                details = self.ib.reqContractDetails(pattern)
+                futures = [d.contract for d in details]
+                futures.sort(key=lambda c: c.lastTradeDateOrContractMonth)
+                
+                today_str = datetime.now().strftime("%Y%m%d")
+                active_future = None
+                for f in futures:
+                     if f.lastTradeDateOrContractMonth > today_str:
+                         active_future = f
+                         break
+                
+                if not active_future:
+                    logger.error("No active MES future found.")
+                    return None
+                    
+                logger.info(f"Active MES Future: {active_future.localSymbol}")
+                underlying_contract = active_future
+                
+            else:
+                underlying_contract = Index(symbol, 'CBOE') if symbol in ['SPX', 'NDX', 'VIX'] else Stock(symbol, 'SMART', 'USD')
+            
+            self.ib.qualifyContracts(underlying_contract)
             
             # 1. Get Chains
-            chains = self.ib.reqSecDefOptParams(underlying.symbol, '', underlying.secType, underlying.conId)
+            if is_future:
+                chains = self.ib.reqSecDefOptParams(underlying_contract.symbol, 'CME', underlying_contract.secType, underlying_contract.conId)
+            else:
+                chains = self.ib.reqSecDefOptParams(underlying_contract.symbol, '', underlying_contract.secType, underlying_contract.conId)
+                
             if not chains:
                 logger.warning("No option chains found.")
                 return None
 
-            # Filter for SMART exchange to get aggregate view
-            chain = next((c for c in chains if c.exchange == 'SMART'), chains[0])
+            if is_future:
+                 chain = chains[0]
+            else:
+                 chain = next((c for c in chains if c.exchange == 'SMART'), chains[0])
             
             # 2. Find Expiration closest to 45 DTE
             today = date.today()
             target_date = today + timedelta(days=target_dte)
             
-            # Parse expirations (they are strings YYYYMMDD)
             valid_expirations = sorted([exp for exp in chain.expirations])
-            
-            # Find closest
             best_exp = min(valid_expirations, key=lambda x: abs((datetime.strptime(x, "%Y%m%d").date() - target_date).days))
             logger.info(f"Selected Expiration: {best_exp}")
 
             # 3. Get Option Chain for that expiration
             strikes = [s for s in chain.strikes]
-            # Need underlying price to narrow down strikes request (optimization)
-            # Request underlying market data
-            und_ticker = self.ib.reqMktData(underlying, '', False, False)
-            self.ib.sleep(1)
+            
+            und_ticker = self.ib.reqMktData(underlying_contract, '', False, False)
+            self.ib.sleep(2)
+            
             und_price = und_ticker.marketPrice()
-            if math.isnan(und_price): und_price = und_ticker.close
+            if math.isnan(und_price) or und_price <= 0:
+                 und_price = und_ticker.close
+                 if math.isnan(und_price) or und_price <= 0:
+                      und_price = und_ticker.last
             
             if math.isnan(und_price) or und_price <= 0:
-                 logger.warning("Could not get underlying price.")
+                 logger.warning(f"Could not get underlying price for {symbol}.")
                  return None
+                 
+            logger.info(f"Underlying Price ({symbol}): {und_price}")
 
-            # Narrow strikes to +/- 20% to save bandwidth
-            relevant_strikes = [s for s in strikes if 0.8 * und_price < s < 1.2 * und_price]
+            # Narrow strikes to +/- 30% to catch far OTM long legs
+            relevant_strikes = [s for s in strikes if 0.7 * und_price < s < 1.3 * und_price]
             
-            # Create contracts
-            contracts = []
-            for strike in relevant_strikes:
-                contracts.append(Option(symbol, best_exp, strike, 'P', 'SMART'))
-                contracts.append(Option(symbol, best_exp, strike, 'C', 'SMART'))
-            
-            # We can't request market data for ALL of them. 
-            # Strategy: Use Black-Scholes locally to estimate delta, or request data for a subset?
-            # IB `reqMktData` provides Greeks. 
-            # A better way with IB is often to just request the ones we think are close 
-            # based on a rough estimate, or use `calculateImpliedVolatility`? 
-            # No, `reqMktData` is standard. But limited to ~100 active tickers.
-            
-            # Heuristic: 16 Delta puts are usually ~10-15% OTM? 16 Delta calls ~5-10% OTM?
-            # Let's verify with current VIX.
-            # For robustness, let's just pick a spread of strikes every 10 points/50 points?
-            
-            # Alternatively, request a few around expected range.
-            # Put Strike ~ Price * (1 - 0.5 * IV * sqrt(T)) ?
-            
-            # Let's request specific strikes spaced out, check their delta, and interpolate/refine.
-            # But "16 Delta" is a strict rule.
-            
-            # Let's try to grab data for ~20 strikes on each side that seem "reasonable".
-            # Assume 16 Delta is roughly 1 SD.
-            # Strike ~ S * exp( +/- sigma * sqrt(T) )
-            # We need sigma (IV). Assume 0.20 (20%) for SPX.
+            # Estimate targets
             T = target_dte / 365.0
-            sigma = 0.20
+            sigma = 0.20 # Base assumption, will refine with Greeks
             
-            put_target_strike = und_price * math.exp(-1.0 * sigma * math.sqrt(T))
-            call_target_strike = und_price * math.exp(1.0 * sigma * math.sqrt(T))
+            # Helper to estimate strike from delta (approximation)
+            # Delta approx N(d1). Inverse CDF needed or just scan.
+            # Scanning is safer.
             
-            # Find closest strikes in the chain
-            # Get 5 strikes around the target
-            put_candidates = sorted(relevant_strikes, key=lambda x: abs(x - put_target_strike))[:5]
-            call_candidates = sorted(relevant_strikes, key=lambda x: abs(x - call_target_strike))[:5]
+            # Heuristic centers
+            # Short Put ~ 16 delta ~ -1 SD
+            # Long Put ~ 6 delta ~ -1.5 SD
+            # Short Call ~ 16 delta ~ +1 SD
+            # Long Call ~ 6 delta ~ +1.5 SD
             
-            # Request data
-            tickers = []
-            contracts_map = {}
+            short_put_target = und_price * math.exp(-1.0 * sigma * math.sqrt(T))
+            long_put_target = und_price * math.exp(-1.6 * sigma * math.sqrt(T))
             
-            for k in put_candidates:
-                c = Option(symbol, best_exp, k, 'P', 'SMART')
-                contracts_map[c.conId] = c # Wait, we don't have conId yet until qualified.
-                # Just store by object ID or use list
+            short_call_target = und_price * math.exp(1.0 * sigma * math.sqrt(T))
+            long_call_target = und_price * math.exp(1.6 * sigma * math.sqrt(T))
             
-            # Batch qualify
-            all_opts = [Option(symbol, best_exp, k, 'P', 'SMART') for k in put_candidates] + \
-                       [Option(symbol, best_exp, k, 'C', 'SMART') for k in call_candidates]
+            # Get candidates
+            def get_candidates(target, count=5):
+                return sorted(relevant_strikes, key=lambda x: abs(x - target))[:count]
+
+            candidates = set()
+            candidates.update(get_candidates(short_put_target))
+            candidates.update(get_candidates(long_put_target))
+            candidates.update(get_candidates(short_call_target))
+            candidates.update(get_candidates(long_call_target))
             
+            all_opts = []
+            contract_map = {} # Key: (strike, right) -> contract
+            
+            for k in candidates:
+                # Add Put
+                if is_future:
+                    p = FuturesOption(symbol, best_exp, k, 'P', 'CME')
+                    c = FuturesOption(symbol, best_exp, k, 'C', 'CME')
+                else:
+                    p = Option(symbol, best_exp, k, 'P', 'SMART')
+                    c = Option(symbol, best_exp, k, 'C', 'SMART')
+                
+                all_opts.extend([p, c])
+                contract_map[(k, 'P')] = p
+                contract_map[(k, 'C')] = c
+
             self.ib.qualifyContracts(*all_opts)
             
+            tickers = []
             for c in all_opts:
                 t = self.ib.reqMktData(c, '', False, False)
                 tickers.append(t)
                 
             self.ib.sleep(3)
             
-            best_put = None
-            best_call = None
-            min_put_diff = 1.0
-            min_call_diff = 1.0
+            # Select Best Strikes
+            def find_best(right, target_d):
+                best = None
+                min_diff = 1.0
+                for t in tickers:
+                    if t.contract.right != right: continue
+                    
+                    if t.modelGreeks and t.modelGreeks.delta is not None:
+                        delta = abs(t.modelGreeks.delta)
+                        diff = abs(delta - target_d)
+                        if diff < min_diff:
+                            min_diff = diff
+                            best = (t.contract.strike, delta, t.bid, t.ask)
+                return best
+
+            short_put = find_best('P', short_delta)
+            long_put = find_best('P', long_delta)
+            short_call = find_best('C', short_delta)
+            long_call = find_best('C', long_delta)
             
-            for t in tickers:
-                if t.modelGreeks and t.modelGreeks.delta is not None:
-                    delta = abs(t.modelGreeks.delta)
-                    strike = t.contract.strike
-                    right = t.contract.right
-                    
-                    diff = abs(delta - target_delta)
-                    
-                    if right == 'P':
-                        if diff < min_put_diff:
-                            min_put_diff = diff
-                            best_put = (strike, delta, t.bid, t.ask)
-                    else:
-                        if diff < min_call_diff:
-                            min_call_diff = diff
-                            best_call = (strike, delta, t.bid, t.ask)
-                            
+            # Fallback (Heuristic) if Greeks fail
+            if not short_put:
+                k = get_candidates(short_put_target, 1)[0]
+                short_put = (k, 0.0, 0.0, 0.0)
+            if not long_put:
+                k = get_candidates(long_put_target, 1)[0]
+                long_put = (k, 0.0, 0.0, 0.0)
+            if not short_call:
+                k = get_candidates(short_call_target, 1)[0]
+                short_call = (k, 0.0, 0.0, 0.0)
+            if not long_call:
+                k = get_candidates(long_call_target, 1)[0]
+                long_call = (k, 0.0, 0.0, 0.0)
+
             return {
                 "expiration": best_exp,
                 "underlying_price": und_price,
-                "put": best_put, # (strike, delta, bid, ask)
-                "call": best_call
+                "short_put": short_put,
+                "long_put": long_put,
+                "short_call": short_call,
+                "long_call": long_call
             }
+
+        except Exception as e:
+            logger.error(f"Error finding strikes: {e}")
+            return None
 
         except Exception as e:
             logger.error(f"Error finding strikes: {e}")
