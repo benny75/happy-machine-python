@@ -99,7 +99,9 @@ class IBTools:
 
     def get_historical_iv_rank(self, symbol="SPX"):
         """
-        Fetches 1 year of historical implied volatility from IBKR and calculates Rank.
+        Fetches 1 year of historical implied volatility from IBKR and calculates IV Percentile.
+        IV Percentile = % of days where historical IV < Current IV.
+        This is more robust against outliers than simple IV Rank.
         """
         try:
             self.connect()
@@ -129,12 +131,20 @@ class IBTools:
             high = df['close'].max()
             current = df['close'].iloc[-1]
             
-            if high == low:
-                return 0.0
-                
-            rank = (current - low) / (high - low) * 100
-            logger.info(f"{symbol} IV Rank (Real-time IB): {rank:.2f} (Low: {low:.2f}, High: {high:.2f}, Current: {current:.2f})")
-            return rank
+            # IV Percentile Calculation
+            if len(df) > 0:
+                below_count = (df['close'] < current).sum()
+                percentile = (below_count / len(df)) * 100.0
+            else:
+                percentile = 0.0
+
+            # Calculate standard Rank for comparison logging
+            rank = 0.0
+            if high > low:
+                rank = (current - low) / (high - low) * 100
+            
+            logger.info(f"{symbol} IV Percentile: {percentile:.2f} (Standard Rank: {rank:.2f} | Low: {low:.2f}, High: {high:.2f}, Current: {current:.2f})")
+            return percentile
 
         except Exception as e:
             logger.error(f"Error getting historical IV rank: {e}")
